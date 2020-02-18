@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Food Recognition AI</title>
+  <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+<script>
+ function detect(){     
+//Model on cloud for detection 
+let app = new Clarifai.App({apiKey: '8d6f110ad3da452c9e1e502309464a10'});
+app.models.predict({id:'HumanBodyDetector', version:'ac8c4fb088134bc98a6cef8012691abd'}, "https://www.facebook.com/photo.php?fbid=620161818145382&set=a.101604543334448&type=3&theater").then(
+  function(response) {
+      console.log(response);
+      var x=JSON.stringify(response);
+      var T=document.getElementById("output");
+      T.innerHTML(x);
+    // do something with response
+  },
+  function(err) {
+    // there was an error
+  }
+);
+    }
+</script>
+</head>
+<body>
+ <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+<p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+<p><img id="output" width="200" /></p>
+
+<script>
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>
+  <button type="button" onclick="detect()" name="button">Submit</button>
+</body>
+</html>

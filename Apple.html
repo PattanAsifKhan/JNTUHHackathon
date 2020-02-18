@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="C:/Users/hp/Desktop/HackathonJNTUH/Alibaba-Hackathon-master/Alibaba-Hackathon-master/project 4/css/bootstrap4.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="C:/Users/hp/Desktop/HackathonJNTUH/Alibaba-Hackathon-master/Alibaba-Hackathon-master/project 4/css/style.css">
+    <script>
+        function myFunc(id){   
+            change(id); 
+         }
+     var g=1;
+     var value=0;
+     function change(id) // no ';' here
+     {
+         
+         var elem = document.getElementById(id);
+         if (elem.value=="Add To Cart"){
+             document.getElementById(id).innerHTML="Added";
+             var x=document.getElementById("one");
+             x.innerHTML="Items "+String(g);
+             g+=1;
+        value+=60;
+    
+     }
+         else if(elem.value=="Added") document.getElementById(id).innerHTML="Add to cart";
+     
+     }
+    </script>
+</head>
+<body>
+    <div class="container-fluid bg-dark header-top d-none d-md-block">
+        <div class="container">
+            <div class="row text-light pt-2 pb-2">
+                <div class="col-md-5"><i class="fa fa-envelope-o" aria-hidden="true"></i> aisf.khan.399@gmail.com</div>
+                <div class="col-md-2"><i class="fa fa-user-o" aria-hidden="true"></i> Account</div>
+                <div class="col-md-2"><i class="fa fa-cart-plus" aria-hidden="true"></i> My Cart <div class="col-md-2" id="one"></div></div>
+                <div class="col-md-2">  <button class="btn btn-info btn-md" onclick="location.href='C:/Users/hp/Desktop/Hackathon/colorlib-regform-5/index.html'" >Check Out</button> </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-black">
+        <nav class="container navbar navbar-expand-lg navbar-dark bg-black">
+      <a class="navbar-brand" href="#">Stybo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Facebook</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Styles
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Mens</a>
+              <a class="dropdown-item" href="#">womens</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">unisex</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Help</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    </div>    
+<div class="container-fluid bg-light-gray">
+    <div class="container pt-5">
+        <div class="row">
+            <h3> Traditional Wear Body shape for Apple</h3>
+        </div>
+    </div>    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="C:\Users\hp\Desktop\HackathonJNTUH\Alibaba-Hackathon-master\Alibaba-Hackathon-master\clothes\female\Apple\T\t1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>type 1</h5>
+                        <h5>$60.00</h5>
+                        <button class="btn btn-danger" value="Add To Cart"id="1"onClick="myFunc(this.id);"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="C:\Users\hp\Desktop\HackathonJNTUH\Alibaba-Hackathon-master\Alibaba-Hackathon-master\clothes\female\Apple\T\t2.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>type 2</h5>
+                        <h5>$60.00</h5>
+                        <button class="btn btn-danger" value="Add To Cart" id="2" onClick="myFunc(this.id);"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="C:\Users\hp\Desktop\HackathonJNTUH\Alibaba-Hackathon-master\Alibaba-Hackathon-master\clothes\female\Apple\T\t3.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>type 3</h5>
+                        <h5>$60.00</h5>
+                        <button class="btn btn-danger" id="3" value="Add To Cart" onClick="myFunc(this.id);"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+           <div class="col-md-3">
+                 <div class="card">
+                    <img src="C:\Users\hp\Desktop\HackathonJNTUH\Alibaba-Hackathon-master\Alibaba-Hackathon-master\clothes\female\Apple\T\t4.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>type 4</h5>
+                        <h5>$60.00</h5>
+                        <button class="btn btn-danger"id="4" value="Add To Cart" onClick="myFunc(this.id);"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-light-gray">
+        <div class="container pt-5">
+            <div class="row">
+                <h3> Western wear Body shape for Apple</h3>
+            </div>
+        </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="C:\Users\hp\Desktop\HackathonJNTUH\Alibaba-Hackathon-master\Alibaba-Hackathon-master\clothes\female\Apple\W\w2.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>type 1</h5>
+                        <h5>$60.00</h5>
+                        <button class="btn btn-danger" value="Add To Cart"id="1"onClick="myFunc(this.id);"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="C:\Users\hp\Desktop\HackathonJNTUH\Alibaba-Hackathon-master\Alibaba-Hackathon-master\clothes\female\Apple\W\w3.jpg" class="card-img-top">
+
+                    <div class="card-body">
+                        <h5>type 2</h5>
+                        <h5>$60.00</h5>
+                        <button class="btn btn-danger" value="Add To Cart" id="2" onClick="myFunc(this.id);"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="C:\Users\hp\Desktop\HackathonJNTUH\Alibaba-Hackathon-master\Alibaba-Hackathon-master\clothes\female\Apple\W\w4.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>type 3</h5>
+                        <h5>$60.00</h5>
+                        <button class="btn btn-danger" id="3" value="Add To Cart" onClick="myFunc(this.id);"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+           <div class="col-md-3">
+                 <div class="card">
+                    <img src="C:\Users\hp\Desktop\HackathonJNTUH\Alibaba-Hackathon-master\Alibaba-Hackathon-master\clothes\female\Apple\W\w5.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>type 4</h5>
+                        <h5>$60.00</h5>
+                        <button class="btn btn-danger"id="4" value="Add To Cart" onClick="myFunc(this.id);"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

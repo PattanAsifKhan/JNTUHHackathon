@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <style>
+            body {
+              background-image: url('background.jpg');
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: 100% 100%;
+            }
+            </style>
+        <title>Welcome Stybo</title>
+        <link rel="stylesheet" href="C:/Users/hp/Desktop/HackathonJNTUH/Alibaba-Hackathon-master/Alibaba-Hackathon-master/project 4/css/bootstrap4.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="C:/Users/hp/Desktop/HackathonJNTUH/Alibaba-Hackathon-master/Alibaba-Hackathon-master/project 4/css/style.css">
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+      <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            function display(value){
+                var a=value;
+                var result;
+                var s=0;
+                var btn = document.createElement("img");
+                btn.src=a;
+                document.getElementById("pic").appendChild(btn);
+                detect(btn.src);
+               detect2(btn.src);
+               var c=0;
+               var max=-111;
+            }
+        function detect(a){     
+        //Model on cloud for detection 
+        let app = new Clarifai.App({apiKey: '8d6f110ad3da452c9e1e502309464a10'});
+        app.models.predict({id:'HumanBodyDetector', version:'ac8c4fb088134bc98a6cef8012691abd'}, a).then(
+        function(response) {
+            var val1=(response.outputs[0].data.concepts[0].value);
+            var i=(response.outputs[0].data.concepts[0].name);; 
+            detect2(a,val1,response); },
+  function(err) {
+    // there was an error
+  }
+);
+        }
+  var main;
+    function detect2(a,val1,r){     
+        //Model on cloud for detection 
+        let app = new Clarifai.App({apiKey: '6edf14f7421a459c969ee63a29436282'});
+        app.models.predict({id:'humanbodyfemale', version:'53214ea15abe45d68c6a65cd9321c22a'}, a).then(
+        function(response) {
+            var val2=(response.outputs[0].data.concepts[0].value);
+            var j=(response.outputs[0].data.concepts[0].name);
+            var m=response;
+            if(val1>val2){
+                createdisplay(r);
+                main=r;
+            }
+            else{
+              var m=response;
+              result=m;
+              createdisplay(m);
+              main=result;
+            }
+
+  },
+  function(err) {
+    // there was an error
+  }
+);
+
+}
+function d(){
+  var x=main.outputs[0].data.concepts[0].name;
+  var lower=x.toLowerCase();
+  if(lower=="hourglass"){
+    window.open ('hourglass.html','_self',false)
+  }
+  else if(lower=="apple"){
+    window.open ('Apple.html','_self',false)
+  }
+  else if(lower=="triangle"){
+    window.open ('InvertedTriangle.html','_self',false)
+  }
+  else if(lower=="pear"){
+    window.open ('pear.html','_self',false)
+
+  }
+  else if(lower=="rectangle"){
+    window.open ('rectangle.html','_self',false)
+
+  }
+
+}
+
+function createdisplay(result){
+              var typeofbody = document.getElementById("weather");
+               var text = document.createTextNode(result.outputs[0].data.concepts[0].name);
+               typeofbody.appendChild(text);
+               var prediction = document.getElementById("temp");
+               var text = document.createTextNode(result.outputs[0].data.concepts[0].value);
+               prediction.appendChild(text);
+               var time=document.getElementById("location");
+               var text = document.createTextNode(result.outputs[0].created_at);
+               time.appendChild(text);
+}
+</script>
+    </head>
+    <body>
+      <div class="container-fluid bg-dark header-top d-none d-md-block">
+        <div class="container">
+            <div class="row text-light pt-2 pb-2">
+                <div class="col-md-5"><i class="fa fa-envelope-o" aria-hidden="true"></i> aisf.khan.399@gmail.com</div>
+                <div class="col-md-2"><i class="fa fa-user-o" aria-hidden="true"></i> Account</div>
+                <div class="col-md-2"><i class="fa fa-cart-plus" aria-hidden="true"></i> My Cart <div class="col-md-2" id="one"></div></div>
+                <div class="col-md-2">  <button class="btn btn-info btn-md" onclick="location.href='C:/Users/hp/Desktop/Hackathon/colorlib-regform-5/index.html'" >Check Out</button> </div>
+            </div>
+        </div>
+    </div>
+    
+          <section>
+        <center>
+        <div id="pic">
+
+        </div>
+    </center>
+        <div class="active-purple-4 mb-4">
+            <input class="form-control" type="text" id="v"placeholder="Upload your image URL here" aria-label="Search">
+          </div>
+          <center><button type="button" class="btn btn-primary" onclick="display(v.value)">Search</button></center>
+        </section>
+        <div class="box">
+          <div class="weather" id="weather"></div>
+          <div class="temp" id="temp"></div>
+          <div class="location" id="location"></div>
+      </div>
+      <center><button type="button" class="btn btn-primary" onclick="d()">Show Collections</button></center>
+</body>
+</html>
